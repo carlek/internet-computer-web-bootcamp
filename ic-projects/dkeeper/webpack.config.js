@@ -16,7 +16,7 @@ module.exports = {
   mode: isDevelopment ? "development" : "production",
   entry: {
     // The frontend.entrypoint points to the HTML file for this build, so we need
-    // to replace the extension to `.js`.
+    // to replace the extension to `.jsx`.
     index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".jsx"),
   },
   devtool: isDevelopment ? "source-map" : false,
