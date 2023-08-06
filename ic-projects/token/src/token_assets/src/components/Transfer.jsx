@@ -3,14 +3,22 @@ import Principal from "@dfinity/principal";
 import { token } from "../../../declarations/token";
 
 function Transfer() {
-  
+
   const [recipientId, setId] = useState("");
   const [amount, setAmount] = useState("");
+  const [isDisabled, setDisable] = useState("false");
+  const [feedback, setFeedback] = useState("");
+  const [isHidden, setHidden] = useState(true);
 
   async function handleClick() {
+    setHidden(true);
+    setDisable(true);
     const recipient = Principal.fromText(recipientId);
     const amountToTransfer = Number(amount);
-    await token.transfer(recipient, amountToTransfer);
+    const result = await token.transfer(recipient, amountToTransfer);
+    setFeedback(result);
+    setHidden(false);
+    setDisable(false);
   }
 
   return (
@@ -43,10 +51,15 @@ function Transfer() {
           </ul>
         </fieldset>
         <p className="trade-buttons">
-          <button id="btn-transfer" onClick={handleClick} >
+          <button
+            id="btn-transfer"
+            onClick={handleClick}
+            disabled={isDisabled}
+          >
             Transfer
           </button>
         </p>
+        <p hidden={isHidden}>{feedback}</p>
       </div>
     </div>
   );
