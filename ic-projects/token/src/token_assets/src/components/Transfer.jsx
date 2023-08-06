@@ -1,12 +1,12 @@
-import React from "react";
-import Principal from "@dfinity/principal";
+import React, {useState} from "react";
+import { Principal } from "@dfinity/principal";
 import { token } from "../../../declarations/token";
 
 function Transfer() {
 
   const [recipientId, setId] = useState("");
   const [amount, setAmount] = useState("");
-  const [isDisabled, setDisable] = useState("false");
+  const [isDisabled, setDisable] = useState(false);
   const [feedback, setFeedback] = useState("");
   const [isHidden, setHidden] = useState(true);
 
