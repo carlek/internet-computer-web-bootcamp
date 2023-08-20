@@ -1,22 +1,9 @@
-import React, {useState} from "react";
-import { Principal } from "@dfinity/principal";
-import { token } from "../../../declarations/token";
+import React from "react";
 
 function Balance() {
-    
-  const [inputValue, setInput] = useState("");
-  const [balanceResult, setBalance] = useState("");
-  const [cryptoSymbol, setSymbol] = useState("");
-  const [isHidden, setHidden] = useState(true);
-
+  
   async function handleClick() {
-    // console.log(inputValue);
-    const principal = Principal.fromText(inputValue);
-    const balance = await token.balanceOf(principal);
-    const symbol = "CARLTOKEN";   // await token.getSymbol();
-    setBalance(balance.toLocaleString());
-    setSymbol(symbol);
-    setHidden(false);
+    console.log("Balance Button Clicked");
   }
 
 
@@ -28,8 +15,6 @@ function Balance() {
           id="balance-principal-id"
           type="text"
           placeholder="Enter a Principal ID"
-          value={inputValue}
-          onChange={(e) =>  setInput(e.target.value)}
         />
       </p>
       <p className="trade-buttons">
@@ -40,7 +25,7 @@ function Balance() {
           Check Balance
         </button>
       </p>
-      <p hidden={isHidden}>This account has a balance of {balanceResult} {cryptoSymbol}.</p>
+      <p>This account has a balance of XYZ.</p>
     </div>
   );
 }
