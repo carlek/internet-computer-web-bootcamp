@@ -25,7 +25,7 @@ function Balance() {
           Check Balance
         </button>
       </p>
-      <p>This account has a balance of XYZ.</p>
+      <p>This account has a balance of NaN.</p>
     </div>
   );
 }

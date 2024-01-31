@@ -12,12 +12,12 @@ function Faucet() {
         <span role="img" aria-label="tap emoji">
           🚰
         </span>
-        Faucet
+         The Faucet
       </h2>
-      <label>Get your free DAngela tokens here! Claim 10,000 DANG coins to your account.</label>
+      <label>Get your free EK tokens here! Claim 10,000 EKTOK coins to your account.</label>
       <p className="trade-buttons">
         <button id="btn-payout" onClick={handleClick}>
-          Gimme gimme
+          Yes Please !
         </button>
       </p>
     </div>
